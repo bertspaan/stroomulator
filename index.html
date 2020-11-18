@@ -11,14 +11,20 @@
   <body>
     <div class="title"></div>
     <div class="panes">
-
+      <div></div>
+      <div>
+        <div class="visualization"></div>
+      </div>
     </div>
 
     <script type="module">
       import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js"
-      import define from "https://api.observablehq.com/d/eb8a1f99282ddf73.js?v=3"
+      import define from "https://api.observablehq.com/d/87a46c6249544d40.js?v=3"
+
       (new Runtime).module(define, (name) => {
-        if (name === 'text') return Inspector.into('.title')()
+        if (name === 'title') return Inspector.into('.title')()
+        if (name === "visualization") return Inspector.into('.visualization')()
+
       })
     </script>
   </body>
